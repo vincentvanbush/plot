@@ -78,7 +78,10 @@ def right_graph(plot_data):
 	right.tick_params(labelsize="small")
 	plt.xticks(range(1,6),[plot['name'] for plot in plot_data],rotation=20,size="x-small")
 
-
+	i = 1
+	for k in data:
+		plt.scatter(i,reduce(lambda x, y: x + y, k) / len(k))
+		i += 1
 
 	pass
 
